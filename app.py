@@ -61,7 +61,7 @@ def browser(urlFilePath):
     if cfgw.read("firstInit", "SERVERCONFIG", "cfg.ini") == "True":
         return redirect(url_for('fit'))
     nestedFilePath = os.path.join(FILE_SYSTEM_ROOT, urlFilePath)
-    nestedFilePath = nestedFilePath.replace("/", "\\")
+    #nestedFilePath = nestedFilePath.replace("/", "\\")
     if os.path.realpath(nestedFilePath) != nestedFilePath:
         return "no directory traversal please."
     if os.path.isdir(nestedFilePath):
